@@ -1,0 +1,208 @@
+/*.wrapper {
+    .main {
+        .container{
+            .article {
+                .post {
+                    p {
+                        color: blue;
+                    }
+                }
+            }
+        }
+    }
+}*/
+
+
+/* Select main element using parent wrapper */
+.main {
+    .wrapper & {
+        width: 300px;
+        height: 300px;
+        background-color: #bada55;
+    }
+}
+
+
+/* Using nested properties */
+p {
+    font: {
+        family: open-sans;
+        size: 30px;
+        weight: 500;
+    }
+    
+    text: {
+        align: center;
+        transform: uppercase;
+    }
+}
+
+/*
+.container{
+    background: {
+     image: url("https://dummyimage.com/450x250/f00/fff");
+     size: cover;
+     position: center center;
+     repeat: no-repeat;
+     
+    }
+}
+*/
+
+
+/* Placeholder, should be used for code that is intended for reuse */
+
+%backgroundImage {
+    background: {
+     size: cover;
+     position: center center;
+     repeat: no-repeat;
+     
+    }
+}
+
+div {
+    @extend %backgroundImage;
+}
+
+.container {
+    background-image: url("https://dummyimage.com/450x250/f00/fff")
+}
+
+.article {
+    background-image: url("https://dummyimage.com/450x250/000/fff");
+}
+
+.post {
+    background-image: url("https://dummyimage.com/450x250/ddd/fff");
+}
+
+/* Variables */
+$blue: #0997d3;
+$red: #e84610;
+$green: #bada55;
+$black: #000000;
+
+$widht: 300px;
+$height: 500px;
+
+body {
+    background-color: $red;
+}
+
+/* list example
+$list: #item1, $item2;
+list example */ 
+
+/* Variables */
+
+
+/*Function */
+@function pxToEm($value, $base) {
+    @return ($value / $base ) + em;
+}
+
+h1 {
+    font-size: pxToEm(32, 16);
+    color: $red;
+}
+/*Function */
+
+
+/* map object */
+$colors: (
+    black: #000000,
+    red: #e84610,
+    green: #bada55
+);
+
+
+/* Iterate trough map object */
+@each $key, $value in $colors {
+    .item-#{$key} {
+        background-color: $value;
+    }
+}
+/* Iterate trough map object */
+
+
+
+/* map object*/
+
+
+/* pass variable into the css class */
+$class: container;
+
+div.#{$class} {
+    background-color: orange;
+}
+/* pass variable into the css class */
+
+
+/*for loop*/
+$class-name: item;
+
+@for $i from 1 through 4 {
+    .#{$class-name}-#{$i} {
+        width: 60px + $i;
+    }
+}
+/*for loop*/
+
+
+/*if else directive*/
+$random: 5;
+
+h2 {
+    @if $random > 5 {
+        color: blue;
+    } @else if $random == 3 {
+        color: purple;
+    } @else {
+        color: orange;
+    }
+}
+/*if else directive*/
+
+/*Mixins are similar to placeholders except that you pass parameters and arguments,
+they are used for code that you wish to reuse.
+*/
+
+@mixin button($color, $size){
+    width: $size;
+    height: $size / 2;
+    border: 1px solid $color;
+    
+    @if $color == #bada55 {
+        color: #fff;
+    } @else {
+        color: $color;
+    }
+    
+}
+
+
+.btn {
+    @include button (#bada55, 200px)
+}
+
+/*Mixins are similar to placeholders except that you pass parameters and arguments,
+they are used for code that you wish to reuse.
+*/
+
+
+/*you can split scss files into partials and import into one file with
+
+@import "folder/file";
+
+i.e. 
+@import "pages/about";
+
+Remember position of import is important
+
+suggested ways of structering see:
+thesassway.com
+
+http://thesassway.com/beginner/how-to-structure-a-sass-project
+
+*/

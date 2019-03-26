@@ -1,0 +1,133 @@
+/*.wrapper {
+    .main {
+        .container{
+            .article {
+                .post {
+                    p {
+                        color: blue;
+                    }
+                }
+            }
+        }
+    }
+}*/
+/* Select main element using parent wrapper */
+.wrapper .main {
+  width: 300px;
+  height: 300px;
+  background-color: #bada55; }
+
+/* Using nested properties */
+p {
+  font-family: open-sans;
+  font-size: 30px;
+  font-weight: 500;
+  text-align: center;
+  text-transform: uppercase; }
+
+/*
+.container{
+    background: {
+     image: url("https://dummyimage.com/450x250/f00/fff");
+     size: cover;
+     position: center center;
+     repeat: no-repeat;
+     
+    }
+}
+*/
+/* Placeholder, should be used for code that is intended for reuse */
+div {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat; }
+
+.container {
+  background-image: url("https://dummyimage.com/450x250/f00/fff"); }
+
+.article {
+  background-image: url("https://dummyimage.com/450x250/000/fff"); }
+
+.post {
+  background-image: url("https://dummyimage.com/450x250/ddd/fff"); }
+
+/* Variables */
+body {
+  background-color: #e84610; }
+
+/* list example
+$list: #item1, $item2;
+list example */
+/* Variables */
+/*Function */
+h1 {
+  font-size: 2em;
+  color: #e84610; }
+
+/*Function */
+/* map object */
+/* Iterate trough map object */
+.item-black {
+  background-color: #000000; }
+
+.item-red {
+  background-color: #e84610; }
+
+.item-green {
+  background-color: #bada55; }
+
+/* Iterate trough map object */
+/* map object*/
+/* pass variable into the css class */
+div.container {
+  background-color: orange; }
+
+/* pass variable into the css class */
+/*for loop*/
+.item-1 {
+  width: 61px; }
+
+.item-2 {
+  width: 62px; }
+
+.item-3 {
+  width: 63px; }
+
+.item-4 {
+  width: 64px; }
+
+/*for loop*/
+/*if else directive*/
+h2 {
+  color: orange; }
+
+/*if else directive*/
+/*Mixins are similar to placeholders except that you pass parameters and arguments,
+they are used for code that you wish to reuse.
+*/
+.btn {
+  width: 200px;
+  height: 100px;
+  border: 1px solid #bada55;
+  color: #fff; }
+
+/*Mixins are similar to placeholders except that you pass parameters and arguments,
+they are used for code that you wish to reuse.
+*/
+/*you can split scss files into partials and import into one file with
+
+@import "folder/file";
+
+i.e. 
+@import "pages/about";
+
+Remember position of import is important
+
+suggested ways of structering see:
+thesassway.com
+
+http://thesassway.com/beginner/how-to-structure-a-sass-project
+
+*/
+
+/*# sourceMappingURL=main.css.map */
